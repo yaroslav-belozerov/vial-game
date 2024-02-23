@@ -197,8 +197,6 @@ class InteractiveGame(arcade.Window):
 
         if not arcade.get_sprites_at_point((x, y), self.container_entries) or self.get_size_container_from_block(
                 self.curr_block) > STACK_HEIGHT + 1:
-            print(self.get_size_container_from_block(
-                self.curr_block))
             if self.last_block_pos is not None:
                 self.curr_block.center_x, self.curr_block.center_y = self.last_block_pos
         self.physics_engine.add_sprite(self.curr_block)
