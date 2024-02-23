@@ -1,9 +1,14 @@
 import unittest
+import interactivegame as g
 
 
-class MyTestCase(unittest.TestCase):
-    def test_something(self):
-        self.assertEqual(True, False)  # add assertion here
+class Testing(unittest.TestCase):
+    def test(self):
+        window = g.InteractiveGame()
+        window.setup()
+        g.arcade.run()
+        for block in window.blocks:
+            self.assertTrue(window.check_max_same_container(block))
 
 
 if __name__ == '__main__':
