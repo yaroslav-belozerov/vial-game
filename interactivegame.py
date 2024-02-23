@@ -233,6 +233,10 @@ class InteractiveGame(arcade.Window):
             colors_left.add(b.color)
         return len(colors_left) == len(self.blocks)
 
+    def on_key_press(self, symbol: int, modifiers: int):
+        if symbol == arcade.key.ESCAPE:
+            self.close()
+
 
 def main():
     window = InteractiveGame()
